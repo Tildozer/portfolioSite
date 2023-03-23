@@ -1,10 +1,31 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./app/**/*.{js,ts,jsx,tsx}"
+    "./app/**/*.{js,ts,jsx,tsx}",
+    "./components/**/*.{js,ts,jsx,tsx}"
   ],
   theme: {
-    extend: {},
+    extend: {
+      animation: {
+        fadeIn: "fadeIn 4s 5",
+        fadeInOnce: "fadeIn 3s 1",
+        slowPing: "ping 3s 3",
+      },
+      keyframes: {
+        fadeIn: {
+          "95%": { opacity: 0 },
+          "50%": { opacity: 1 },
+          "10%": { opacity: 0.5 },
+          "0%%": { opacity: 0 },
+        },
+      },
+      width: {
+        'full': '100vw'
+      },
+      height: {
+        'full': '100vh'
+      },
+    },
   },
   plugins: [],
 }
