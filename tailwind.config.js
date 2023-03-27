@@ -6,6 +6,7 @@ module.exports = {
   ],
   theme: {
     extend: {
+
       animation: {
         fadeIn: "fadeIn 4s 5",
         fadeInOnce: "fadeIn 3s 1",
@@ -18,12 +19,19 @@ module.exports = {
           "10%": { opacity: 0.5 },
           "0%%": { opacity: 0 },
         },
+        
       },
       width: {
-        'full': '100vw'
+        'vwf': '100vw'
+      },
+      minWidth:{
+        'vwf': '100vw'
       },
       height: {
-        'full': '100vh'
+        'vhf': '100vh'
+      },
+      minHeight: {
+        'vhf': '100vh'
       },
     },
   },

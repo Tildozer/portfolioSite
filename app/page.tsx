@@ -1,25 +1,30 @@
 "use client"
-import { Roboto } from 'next/font/google'
+import { Exo } from 'next/font/google'
 import './globals.css';
-import { Button } from '@/components/Button';
+import { Button, Nav } from '@/components/';
 
 
-const roboto = Roboto({
+const exo = Exo({
   weight: '400',
-  style:"italic",
-  subsets: ["cyrillic"],
+  style: "normal",
+  subsets: ["latin"],
 })
 
-const sendEmail = async (ev: any) => {
-  ev.preventDefault()
+const sendEmail = async (ev: React.MouseEvent<HTMLButtonElement>) => {
+  ev.preventDefault();
 }
 
 export default function Home() {
   return (
-    <main className={roboto.className}>
-      <div className='text-orange-500 bg-slate-800 min-h-[100vh]'>
-        <h1>Anthony Thibodeaux</h1>
-        <Button callback={sendEmail}/>
+    <main className={exo.className}>
+      <div className='flex bg-slate-800 min-h-vhf'>
+        <div>
+          <Nav />
+        </div>
+        <div className='text-orange-500'>
+          <h1 className='text-6xl'>Anthony Thibodeaux</h1>
+          <Button callback={sendEmail}/>
+        </div>
       </div>
     </main>
   )
