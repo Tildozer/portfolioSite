@@ -6,7 +6,9 @@ module.exports = {
   ],
   theme: {
     extend: {
-
+      transformOrigin:{
+        "left-center": "left center" 
+      },
       animation: {
         fadeIn: "fadeIn 4s 5",
         fadeInOnce: "fadeIn 3s 1",
@@ -20,6 +22,9 @@ module.exports = {
           "0%%": { opacity: 0 },
         },
         
+      },
+      margin:{
+        'vwf': '100vw'
       },
       width: {
         'vwf': '100vw'

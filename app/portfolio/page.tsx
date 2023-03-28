@@ -6,7 +6,7 @@ export default function portfolio() {
   return (
     <main className='bg-green-500 min-h-[100vh]'>
       <div className="flex min-h-vhf">
-        <section>
+        <section className=''>
           <Nav />
         </section>
         <section className='text-gray-800'>

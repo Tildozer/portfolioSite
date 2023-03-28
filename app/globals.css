@@ -1,3 +1,25 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.hamburger:has(input:checked)::before{
+  rotate: 45deg;
+  width: 3.535533905925rem;
+  translate: 0 -.25rem;
+  background-color: white;
+}
+
+.hamburger:has(input:checked)::after{
+  rotate: -45deg;
+  width: 3.535533905925rem;
+  translate: 0 .25rem;
+  background-color: white
+}
+
+.sidebar{
+  translate: -100%
+}
+
+.hamburger:has(input:checked) + .sidebar{
+  translate: 0;
+}
