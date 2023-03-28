@@ -22,4 +22,5 @@
 
 .hamburger:has(input:checked) + .sidebar{
   translate: 0;
+  width: 30rem;
 }

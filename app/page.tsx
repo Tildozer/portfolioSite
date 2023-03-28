@@ -18,9 +18,8 @@ export default function Home() {
   return (
     <main className={exo.className}>
       <div className='flex bg-slate-800 min-h-vhf'>
-        <section>
+        
           <Nav />
-        </section>
         <section className='text-orange-500'>
           <h1 className='text-6xl'>Anthony Thibodeaux</h1>
           <Button callback={sendEmail} message='send email'/>
