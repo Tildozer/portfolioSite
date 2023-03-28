@@ -1,9 +1,8 @@
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
+"use client"
 import { Nav } from '@/components'
 // import './globals.css';
 
-export default async function About() {
+export default function About() {
   return (
     <main className='bg-orange-500 min-h-[100vh]'>
       <div className="flex min-h-vhf">

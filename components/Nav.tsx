@@ -1,10 +1,22 @@
-import React from 'react'
+import Link from 'next/link'
+
 
 type Props = {}
 
 const Nav = (props: Props) => {
+      
   return (
-    <div>Nav</div>
+    <>
+      {/* <label>
+        <input type="checkbox" />
+        {/* <aside></aside> }
+      </label> */}
+      <nav className='flex flex-col'>
+        <Link href="/about">about</Link>
+        <Link href="/portfolio">portfolio</Link>
+        <Link href="/">home</Link>
+      </nav>
+    </>
   )
 }
 
