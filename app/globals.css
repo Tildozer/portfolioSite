@@ -2,25 +2,29 @@
 @tailwind components;
 @tailwind utilities;
 
-.hamburger:has(input:checked)::before{
+.hamburger:has(input:checked)::before {
   rotate: 45deg;
   width: 3.535533905925rem;
-  translate: 0 -.25rem;
-  background-color: white;
+  translate: 0 -0.25rem;
+  background-color: black;
 }
 
-.hamburger:has(input:checked)::after{
+.hamburger:has(input:checked)::after {
   rotate: -45deg;
   width: 3.535533905925rem;
-  translate: 0 .25rem;
-  background-color: white
+  translate: 0 0.25rem;
+  background-color: black;
 }
 
-.sidebar{
-  translate: -100%
+.sidebar {
+  translate: -100%;
 }
 
-.hamburger:has(input:checked) + .sidebar{
+.hamburger:has(input:checked) + .sidebar {
   translate: 0;
-  width: 30rem;
+  width: 300px;
+}
+
+.svg-background {
+  background-image: url("../public/layered-waves-haikei.svg");
 }
