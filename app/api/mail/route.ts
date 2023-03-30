@@ -1,4 +1,5 @@
 import { type NextRequest } from 'next/server'
+import sendMail from "./mail"
 interface Err {
   error: boolean,
   status: number,
@@ -13,8 +14,7 @@ interface MailObj {
 
 export async function POST(request: NextRequest) {
   try {
-    console.log(request.body)
-    // sendMail("Anthony's resume", req?.body)
+    sendMail("Anthony's resume", await request.json())
     
     return new Response("Email sent")
   } catch (error: Err | any) {

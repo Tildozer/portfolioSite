@@ -34,7 +34,7 @@ const sendMailHandler = async(client: string, content: MailObj) => {
         const emailInfo = {
             from: process.env.EMAIL,
             to: `${content.email}`,
-            subject: "Order Confirmation from REKANSTRUCTED",
+            subject: "Anthony's Info",
             html: getHTMLMessage(client, content),
         }
 
@@ -55,11 +55,18 @@ const sendMailHandler = async(client: string, content: MailObj) => {
 const getHTMLMessage = (client: string, content: MailObj) => {
     return `
     <h1>Hi, ${content.name}!</h1>
-    <h1>Thank you for your order!</h1>
-    <img src="https://media.giphy.com/media/l4q7VhGsL6BnXJrc4/giphy.gif"/>
-    <p>Order details: </p>
+    <h1>Thank you for taking the time to look at my portfoli!</h1>
+    <div>
+      <a href="mailto:actninswitch@gmail.com">actninswitch@gmail.com</a>
+    </div>
+    <div>
+      <a href="https://www.linkedin.com/in/anthony-thibodeaux">Linkden profile</a>
+    </div>
+    <div>
+      <a href="https://github.com/Tildozer">github account</a>
+    </div>
     <div>${content.htmlStr}</div>
     `;
 }
 
-module.exports = { sendMail };
+export default sendMail 

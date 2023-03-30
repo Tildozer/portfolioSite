@@ -11,11 +11,11 @@ const EmailForm = (props: Props) => {
   const [name, setName] = useState("");
     const sendEmail = async (ev: React.MouseEvent<HTMLButtonElement>) => {
         ev.preventDefault();
-        const emailSent = await axios.post("/api/mail/", {
+        const emailSent = await axios.post("/api/mail/", JSON.stringify({
             email,
             name,
             htmlStr: `<h1>tester</h1>`,
-        })
+        }))
 
         console.log(emailSent)
       };
