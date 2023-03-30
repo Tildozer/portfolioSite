@@ -2,14 +2,20 @@ const nodemailer = require("nodemailer");
 
 interface MailObj {
     email: string
+    name: string
+    htmlStr: string
 }
 interface EmailResponse {
     response: string
 }
 
-const sendMail = async(client: string, content: MailObj) => {
-    const mailSentResponse = await sendMailHandler(client, content);
-    console.log("email sent, emailResponse: ", mailSentResponse);
+const sendMail = async(client: string, content: MailObj | null) => {
+    if(content !== null){
+      const mailSentResponse = await sendMailHandler(client, content);
+      console.log("email sent, emailResponse: ", mailSentResponse);
+    } else {
+      throw new Error("Please fill out the information")
+    }
 }
 
 const sendMailHandler = async(client: string, content: MailObj) => {
@@ -47,14 +53,13 @@ const sendMailHandler = async(client: string, content: MailObj) => {
 
 
 const getHTMLMessage = (client: string, content: MailObj) => {
-    // return `
-    // <h1>Hi, ${content.name}!</h1>
-    // <h1>Thank you for your order!</h1>
-    // <img src="https://media.giphy.com/media/l4q7VhGsL6BnXJrc4/giphy.gif"/>
-    // <p>Order details: </p>
-    // <ul>${content.htmlStr}</ul>
-    // <p>Order total: $${content.total}</p>
-    // `;
+    return `
+    <h1>Hi, ${content.name}!</h1>
+    <h1>Thank you for your order!</h1>
+    <img src="https://media.giphy.com/media/l4q7VhGsL6BnXJrc4/giphy.gif"/>
+    <p>Order details: </p>
+    <div>${content.htmlStr}</div>
+    `;
 }
 
 module.exports = { sendMail };

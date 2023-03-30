@@ -1,18 +1,29 @@
-import { NextApiRequest, NextApiResponse } from "next";
-
+import { type NextRequest } from 'next/server'
 interface Err {
   error: boolean,
   status: number,
   message: string,
 }
 
-export async function POST(req: NextApiRequest, res: NextApiResponse) {
+interface MailObj {
+  email: string
+  name: string
+  htmlStr: string
+}
+
+export async function POST(request: NextRequest) {
   try {
+    console.log(request.body)
+    // sendMail("Anthony's resume", req?.body)
     
-    sendMail("Anthony's resume", req.body)
-    
-    return res.send(req.body)
+    return new Response("Email sent")
   } catch (error: Err | any) {
-    res.status(error.status = 500).send({message: error?.message, error : error?.error})
+    return new Response(error)
   }
+}
+
+export const config = {
+  api: {
+    bodyParser: true,
+  },
 }

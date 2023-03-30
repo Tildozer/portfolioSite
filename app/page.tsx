@@ -2,6 +2,7 @@
 import { Exo } from "next/font/google";
 import "./globals.css";
 import { EmailForm, Nav } from "@/components/";
+
 const exo = Exo({
   weight: "400",
   style: "normal",
@@ -15,7 +16,7 @@ export default function Home() {
     <main className={exo.className}>
       <div className="flex bg-slate-800 min-h-vhf">
         <Nav />
-        <section className="text-orange-500">
+        <section className="text-teal-400">
           <div className=" h-60">
             <h1 className="text-4xl md:text-6xl">Anthony Thibodeaux</h1>
           </div>
