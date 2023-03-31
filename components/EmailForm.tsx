@@ -34,7 +34,7 @@ const EmailForm = (props: Props) => {
       <div className={error ? "animate-bounce" : ""}>{error}</div>
       <form className="flex flex-col items-center">
         <input
-          className="m-3 w-8/12 pl-2 text-black rounded-sm placeholder:text-teal-700 placeholder:opacity-40"
+          className="m-3 w-8/12 max-w-[34rem] pl-2 text-black rounded-sm placeholder:text-teal-700 placeholder:opacity-40"
           onChange={(ev: React.ChangeEvent<HTMLInputElement>) =>
             setEmail(ev.target.value)
           }
@@ -43,7 +43,7 @@ const EmailForm = (props: Props) => {
           type="text"
         />
         <input
-          className="m-3 w-8/12 pl-2 text-black rounded-sm placeholder:text-teal-700 placeholder:opacity-40"
+          className="m-3 w-8/12 max-w-[34rem] pl-2 text-black rounded-sm placeholder:text-teal-700 placeholder:opacity-40"
           onChange={(ev: React.ChangeEvent<HTMLInputElement>) =>
             setName(ev.target.value)
           }
