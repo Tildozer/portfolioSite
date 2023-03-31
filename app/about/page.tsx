@@ -1,5 +1,5 @@
 "use client";
-import { Nav } from "@/components";
+import { Footer, Nav } from "@/components";
 // import './globals.css';
 
 export default function About() {
@@ -11,6 +11,7 @@ export default function About() {
         </div>
         <div className="text-gray-800">about</div>
       </div>
+      <Footer />
     </main>
   );
 }

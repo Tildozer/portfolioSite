@@ -6,7 +6,7 @@ type Props = {};
 
 const Nav = (props: Props) => {
   return (
-    <section className="mr-20">
+    <section>
       <div className="box-border absolute">
         <Hamburger />
         <aside className="sidebar pt-14 pl-2 bg-black text-white min-h-vhf transition-[translate] duration-200 w-full bg-no-repeat bg-center bg-cover svg-background bg-opacity-0 overflow-y-hidden">

@@ -1,5 +1,5 @@
 "use client";
-import { Nav } from "@/components";
+import { Footer, Nav } from "@/components";
 // import './globals.css';
 
 export default function portfolio() {
@@ -11,6 +11,7 @@ export default function portfolio() {
         </section>
         <section className="text-gray-800">portfolio</section>
       </div>
+      <Footer />
     </main>
   );
 }
