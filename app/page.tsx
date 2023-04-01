@@ -1,9 +1,9 @@
 "use client";
-import { Exo } from "next/font/google";
+import { Exo, Volkhov } from "next/font/google";
 import "./globals.css";
 import { EmailForm, Footer, Nav } from "@/components/";
 
-const exo = Exo({
+const volkhov = Volkhov({
   weight: "400",
   style: "normal",
   subsets: ["latin"],
@@ -11,18 +11,19 @@ const exo = Exo({
 
 export default function Home() {
   return (
-    <main className={exo.className}>
-      <div className="flex flex-col text-teal-400 bg-slate-800 min-h-vhf min-w-[300px]">
+    <main className={`${volkhov.className} flex flex-col text-black bg-cadetGray min-h-vhf min-w-[300px]`}>
         <header>
           <Nav />
           <div className="h-60">
-            <h1 className="text-4xl ml-20 md:text-6xl">Anthony Thibodeaux</h1>
+            <h1 className="mt-4 text-6xl"><span className="ml-20">Anthony</span> <span>Thibodeaux</span></h1>
           </div>
         </header>
-        <section className="text-teal-400">
+        <section className=" min-h-[24rem]">
+
+        </section>
+        <section className="flex text-onyx justify-center">
           <EmailForm />
         </section>
-      </div>
       <Footer />
     </main>
   );

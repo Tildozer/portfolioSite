@@ -11,7 +11,7 @@ interface Props {}
 const Footer = (props: Props) => {
   return (
     <footer 
-      className="flex justify-center h-36 pt-4"
+      className="flex justify-center h-24 pt-4 bg-mountainBatten border-t-2 border-onyx"
     >
       <section className="flex">
         <Link href="https://www.linkedin.com/in/anthony-thibodeaux/" className="mt-1">
