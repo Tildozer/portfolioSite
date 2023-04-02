@@ -33,6 +33,7 @@ const EmailForm = (props: Props) => {
     <>
       <div className={error ? "animate-bounce" : ""}>{error}</div>
       <form className="flex flex-col items-center bg-coolGray pb-5 pt-5 mb-5 rounded-md border-2 shadow-lg shadow-teal-200 border-onyx w-10/12">
+      <div className="m-2">To get an email with more info about where to reach me, fill out this form.</div>
         <label htmlFor="Email">Email</label>
         <input
           className="m-3 w-8/12 max-w-[34rem] pl-2 text-black rounded-sm"

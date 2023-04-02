@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+.hamburger:has(input:checked){
+  padding-left: 1.5rem;
+}
 .hamburger:has(input:checked)::before {
   rotate: 45deg;
   width: 3.535533905925rem;
@@ -23,4 +26,7 @@
 .hamburger:has(input:checked) + .sidebar {
   translate: 0;
   width: 300px;
+}
+.nav {
+  position: -webkit-sticky; 
 }
