@@ -1,6 +1,7 @@
+"use client"
 import React, { useState } from "react";
 import { Button } from ".";
-import axios, { AxiosError, AxiosHeaders } from "axios";
+import axios, { AxiosError } from "axios";
 import { emailFetch } from "@/fetchCalls";
 
 interface Props {}
@@ -32,11 +33,11 @@ const EmailForm = (props: Props) => {
   return (
     <>
       <div className={error ? "animate-bounce" : ""}>{error}</div>
-      <form className="flex flex-col items-center bg-coolGray pb-5 pt-5 mb-5 rounded-md border-2 shadow-lg shadow-teal-200 border-onyx w-10/12">
+      <form className="flex flex-col items-center bg-coolGray pb-5 pt-5 mb-5 rounded-md border-2 shadow-lg shadow-onyx border-onyx w-10/12">
       <div className="m-2">To get an email with more info about where to reach me, fill out this form.</div>
         <label htmlFor="Email">Email</label>
         <input
-          className="m-3 w-8/12 max-w-[34rem] pl-2 text-black rounded-sm"
+          className="m-3 w-8/12 max-w-[34rem] pl-2 text-black rounded-md border-2 border-mountainBatten"
           onChange={(ev: React.ChangeEvent<HTMLInputElement>) =>
             setEmail(ev.target.value)
           }
@@ -46,7 +47,7 @@ const EmailForm = (props: Props) => {
         />
         <label htmlFor="Name">Name</label>
         <input
-          className="m-3 w-8/12 max-w-[34rem] pl-2 text-black rounded-sm"
+          className="m-3 w-8/12 max-w-[34rem] pl-2 text-black rounded-md border-2 border-mountainBatten"
           onChange={(ev: React.ChangeEvent<HTMLInputElement>) =>
             setName(ev.target.value)
           }

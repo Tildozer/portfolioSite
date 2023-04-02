@@ -6,6 +6,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      screens: {
+        "xs" : "400px"
+      },
       transformOrigin:{
         "left-center": "left center" 
       },
@@ -16,10 +19,8 @@ module.exports = {
       },
       keyframes: {
         fadeIn: {
-          "95%": { opacity: 0 },
-          "50%": { opacity: 1 },
-          "10%": { opacity: 0.5 },
-          "0%%": { opacity: 0 },
+          "90%": { opacity: 1 },
+          "0%": { opacity: 0 },
         },
         
       },

@@ -1,3 +1,4 @@
+"use client"
 import React from "react";
 import Link from "next/link";
 import { Hamburger } from ".";
@@ -6,7 +7,7 @@ type Props = {};
 
 const Nav = (props: Props) => {
   return (
-    <section className="sticky top-0 z-10">
+    <section className="sticky top-0 z-10 nav">
       <div className="box-border absolute">
         <Hamburger />
         <aside className="sidebar pt-14 pl-1 bg-black text-white min-h-vhf text-opacity-0 transition-[translate] duration-200 w-full bg-no-repeat bg-cover bg-[url('../public/haikeiPeaks.svg')] bg-opacity-0 ">

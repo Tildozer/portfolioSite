@@ -1,10 +1,8 @@
-"use client";
 import React from "react";
 import { Volkhov } from "next/font/google";
 import "./globals.css";
 import { EmailForm, Footer, Nav, TypeEffect } from "@/components/";
-import Tree from "../public/Growing-Past-The-Planet.png"
-import Peaks from "../public/haikeiPeaks.svg"
+import Ladybug from "../public/ladybug.png"
 import Image from "next/image";
 
 const volkhov = Volkhov({
@@ -16,10 +14,10 @@ const volkhov = Volkhov({
 const words = [
   "devoted.", 
   "motivated.", 
-  "productive.", 
   "resorceful.", 
-  "ready to join your team!", 
-  "take on any challenge standing in my way.",
+  "Learning every day.", 
+  "ready to take on any challenge in my way.",
+  "", 
 ]
 const options = {
   strings: words,
@@ -35,7 +33,7 @@ export default function Home() {
       <header className="">
         <div>
           <h1 className="mt-4 text-6xl">
-            <span className="ml-24">Anthony</span> <span>Thibodeaux</span>
+            <span className="ml-24 animate-fadeInOnce">Anthony</span> <span className="animate-fadeInOnce">Thibodeaux</span>
           </h1>
         </div>
       </header>
@@ -49,9 +47,9 @@ export default function Home() {
       <section className="flex flex-col text-onyx justify-center items-center ">
         <EmailForm />
       </section>
-      <section className="">
-        <div className="flex justify-center">
-          <Image src={Tree} alt="A tree that is growing out of a foregin planent" width={1000} height={1000} />
+      <section className=" self-center">
+        <div className="flex justify-center border-4 rounded-t-lg border-onyx max-w-[800px]">
+          <Image src={Ladybug} alt="A tree that is growing out of a foregin planent" width={800} height={1000} />
         </div>
       </section>
       <Footer />
