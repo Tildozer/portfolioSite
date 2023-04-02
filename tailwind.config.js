@@ -25,7 +25,6 @@ module.exports = {
       },
       colors:{
         'onyx': "#303633",
-        'auqamarine': '#8BE8CB',
         'cadetGray' : '#7EA2AA',
         'coolGray' : '#888DA7',
         'mountainBatten' : '#9C7A97',

@@ -11,7 +11,11 @@ const volkhov = Volkhov({
 });
 
 const words = ["devoted.", "motivated.", "productive.", "resorceful.", "ready to join your team!", "take on any challenge standing in my way."]
-
+const options = {
+  strings: words,
+  autoStart: true,
+  loop: true
+}
 export default function Home() {
   return (
     <main
@@ -25,10 +29,12 @@ export default function Home() {
           </h1>
         </div>
       </header>
-      <section className="min-h-[26rem]">
-        <div className="flex text-black">
-          <span>I am</span>&nbsp;<TypeEffect words={words} textColor="text-auqamarine" />
-        </div>
+      <section className="min-h-[26rem] mt-4">
+        <h2 className="flex justify-center items-center bg-onyx text-white text-2xl h-24">
+          <span>I am</span>
+          &nbsp;
+          <TypeEffect words={words} textColor="text-teal-200" options={options} />
+        </h2>
       </section>
       <section className="flex text-onyx justify-center">
         <EmailForm />

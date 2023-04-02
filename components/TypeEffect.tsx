@@ -4,18 +4,27 @@ import Typewriter from "typewriter-effect";
 type Props = {
   words: string[];
   textColor: string;
+  options: {
+    strings?: string | string[]
+    cursor?: string
+    delay?: "natural" | number
+    deleteSpeed?: "natural" | number
+    loop?: boolean
+    autoStart?: boolean
+    pauseFor?: number
+    devMode?: boolean
+    skipAddStyles?: boolean
+    wrapperClassName?: string
+    cursorClassName?: string
+  }
 };
 
 const TypeEffect = (props: Props) => {
-  const { words, textColor } = props;
+  const { words, textColor, options } = props;
   return (
     <span className={`${textColor}`}>
       <Typewriter
-        options={{
-          strings: words,
-          autoStart: true,
-          loop: true
-        }}
+        options={options}
         onInit={(typewriter) => {
           typewriter
             .typeString("")
