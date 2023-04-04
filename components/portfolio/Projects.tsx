@@ -1,7 +1,8 @@
-import Link from 'next/link'
+
 import React from 'react'
 import {default as projects} from './projectsArray'
 import Image from 'next/image'
+import {Points, ProjectLinks} from '.'
 
 
 
@@ -15,26 +16,18 @@ const Projects = (props: Props) => {
     <>
       {projects.map((project, idx) => {
         return (
-          <div key={idx}>
-            <Link
-              className="cursor-pointer w-24 underline underline-offset-2 hover:text-black"
-              href={project.link}
-            >
-              {project.name}
-            </Link>
+          <div key={idx} className='mb-24'>
+            <ProjectLinks name={project.name} link={project.link} githubLink={project.githubLink}/>
             <br />
-            <ul className='list-disc flex flex-col sm:flex-row'>
+            <ul className='list-disc flex flex-col sm:flex-row border-2 border-onyx shadow-md max-w-[40rem] min-h-[20rem] p-4 pl-6 rounded-md m-4'>
               <div>
-                <Image priority width={200} src={project.imgLocation} alt={`${project.name}'s Logo`}/>
+                <Image priority height={200} width={400} src={project.imgLocation} alt={`${project.name}'s Logo`}/>
+                <div className='text-xl'>
+                  {project.projectType}
+                </div>
               </div>
               <div className='flex flex-col'>
-                {project.about.map((point, idx) => {
-                  return (
-                    <li key={idx} className='ml-10'>
-                      {point}
-                    </li>
-                  )
-                })}
+                <Points about={project.about}/>
               </div>
             </ul>
           </div>

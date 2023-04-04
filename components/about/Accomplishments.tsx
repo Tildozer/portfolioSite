@@ -34,7 +34,7 @@ const Accomplishments = (props: Props) => {
           return (
             <li 
               key={idx}
-              className={`m-2 p-2 max-w-[40rem] border-2 rounded-lg border-mountainBatten shadow-md shadow-mountainBatten ${idx % 2 !== 0 ? "xs:self-end xl:mr-48 " : ""}${show[idx] ? "animate-fadeInOnce" : "hidden"}`}
+              className={`m-2 p-2 max-w-[40rem] border-2 rounded-lg border-mountainBatten shadow-md shadow-mountainBatten ${idx % 2 !== 0 ? "xs:self-end xl:mr-48 2xl:self-center " : ""}${show[idx] ? "animate-fadeInOnce" : "hidden"}`}
             >
               <h1 className="bg-mountainBatten w-fit rounded-full pl-2 pr-2 text-onyx">
                 {accomplishment.name}

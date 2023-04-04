@@ -14,10 +14,10 @@ export default function About() {
       <section className="min-h-[20rem] xs:ml-24 xs:mr-2 mb-12">
         <Accomplishments />
       </section>
-      <section className="min-h-[20rem] ml-0 mt-20 xs:ml-28 mb-10">
+      <section className="min-h-[30rem] ml-0 mt-20 xs:ml-28">
        <FunFacts />
       </section>
-      <Footer />
+        <Footer />
     </main>
   );
 }

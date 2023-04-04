@@ -8,7 +8,8 @@ module.exports = {
     extend: {
       screens: {
         "xs" : "400px",
-        "xl" : "1400px"
+        "xl" : "1400px",
+        "2xl" : "1650px",
       },
       transformOrigin:{
         "left-center": "left center" 

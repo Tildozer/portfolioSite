@@ -5,15 +5,15 @@ import Link from "next/link";
 export default function portfolio() {
 
   return (
-    <main className="bg-coolGray">
+    <main className="bg-coolGray min-h-vhf min-w-[fit-content] flex flex-col">
       <Nav />
-      <header className="text-gray-800 ml-24 mb-14">
+      <header className="text-gray-800 text-4xl xs:text-6xl animate-fadeInOnce ml-24 mb-14">
         Portfolio
       </header>
-      <section className="xs:ml-24 text-onyx">
+      <section className="xs:ml-24 text-onyx min-h-[78.7vh]">
         <Projects />
       </section>
-      <Footer />
+        <Footer />
     </main>
   );
 }
