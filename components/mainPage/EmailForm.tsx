@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import { Button } from ".";
+import { Button } from "..";
 import axios, { AxiosError } from "axios";
 import { emailFetch } from "@/fetchCalls";
 

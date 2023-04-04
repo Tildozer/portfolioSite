@@ -1,5 +1,6 @@
-import { Accomplishments, Footer, Nav } from "@/components";
+import { Accomplishments, Footer, Nav, FunFacts } from "@/components";
 // import './globals.css';
+
 
 export default function About() {
   return (
@@ -14,12 +15,7 @@ export default function About() {
         <Accomplishments />
       </section>
       <section className="h-80 ml-24">
-        <h1 className="underline underline-offset-4">Fun facts:</h1>
-        <ul className="flex flex-col">
-          <li>item</li>
-          <li>item</li>
-          <li>item</li>
-        </ul>
+       <FunFacts />
       </section>
       <Footer />
     </main>

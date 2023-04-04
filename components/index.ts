@@ -1,7 +1,7 @@
-export { default as Accomplishments } from "./Accomplishments";
-export { default as Button } from "./Button";
-export { default as EmailForm } from "./EmailForm";
+export { Nav } from "./nav";
+export { Button } from "./mainPage";
+export { FunFacts } from "./about";
+export { EmailForm } from "./mainPage";
+export { TypeEffect } from "./mainPage";
+export { Accomplishments } from "./about";
 export { default as Footer } from "./Footer";
-export { default as Hamburger } from "./Hamburger";
-export { default as Nav } from "./Nav";
-export { default as TypeEffect } from "./TypeEffect";
