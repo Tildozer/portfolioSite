@@ -15,15 +15,14 @@ const Footer = (props: Props) => {
           href="https://www.linkedin.com/in/anthony-thibodeaux/"
           className="mt-1"
         >
-          <Image height={45} width={45} src={Linkedin} alt="LinkedIn Profile" />
+          <Image priority height={45} src={Linkedin} alt="LinkedIn Profile" />
         </Link>
         <Link href="https://github.com/Tildozer">
-          <Image height={45} width={45} src={Github} alt="Github Profile" />
+          <Image height={45} src={Github} alt="Github Profile" />
         </Link>
         <Link className="mt-6 ml-2" href="https://rekanstructed.onrender.com/">
           <Image
-            height={45}
-            width={65}
+            width={75}
             src={Rekanstructed}
             alt="Github Profile"
           />
