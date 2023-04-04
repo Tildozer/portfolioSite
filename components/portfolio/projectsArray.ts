@@ -18,7 +18,7 @@ const projects: Project[] = [
      about: [
       "This project was my final project for Fullstack Academy, my two partners and I were tasked with making an Ecommerce website, and we went with a buyback Lego site.",
       "In the development process, we decided to use Jest to test our back-end routes, and our database calls to ensure they were working, helping assure that our functions were properly working before we got to the front end.",
-      "",
+      "We used Exalidraw to plan out our front end before coding that way we were all on the same page about what to do. This helped make development smooth thus letting us do some extra stuff at the end such as email confirmation with NodeMailer",
     ],
      imgLocation: reKANstructed, 
      projectType: "Group Project"

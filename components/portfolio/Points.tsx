@@ -10,9 +10,12 @@ const Points = (props: Props) => {
     <>
       {about.map((point, idx) => {
         return (
-          <li key={idx} className='ml-10 min-w-[10rem]'>
-            {point}
-          </li>
+          <div key={idx}>
+            <li className='ml-10 min-w-[10rem]'>
+              {point}
+            </li>
+            <br/>
+          </div>
         )
       })}
     </>

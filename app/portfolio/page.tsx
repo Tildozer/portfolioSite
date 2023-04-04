@@ -10,7 +10,7 @@ export default function portfolio() {
       <header className="text-gray-800 text-4xl xs:text-6xl animate-fadeInOnce ml-24 mb-14">
         Portfolio
       </header>
-      <section className="xs:ml-24 text-onyx min-h-[78.7vh]">
+      <section className=" flex flex-col xs:items-center text-onyx min-h-[78.7vh]">
         <Projects />
       </section>
         <Footer />
