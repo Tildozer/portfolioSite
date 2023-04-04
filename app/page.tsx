@@ -32,9 +32,9 @@ export default function Home() {
       <Nav />
       <header className="">
         <div>
-          <h1 className="mt-4 text-6xl">
+          <h1 className="mt-10 text-4xl xs:text-6xl">
             <span className="ml-24 animate-fadeInOnce">Anthony</span>{" "}
-            <span className="animate-fadeInOnce">Thibodeaux</span>
+            <span className="pl-2 xs:pl-0 animate-fadeInOnce">Thibodeaux</span>
           </h1>
         </div>
       </header>
