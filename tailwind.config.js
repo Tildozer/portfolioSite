@@ -7,7 +7,8 @@ module.exports = {
   theme: {
     extend: {
       screens: {
-        "xs" : "400px"
+        "xs" : "400px",
+        "xl" : "1400px"
       },
       transformOrigin:{
         "left-center": "left center" 

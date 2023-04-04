@@ -1,3 +1,4 @@
+export { default as Accomplishments } from "./Accomplishments";
 export { default as Button } from "./Button";
 export { default as EmailForm } from "./EmailForm";
 export { default as Footer } from "./Footer";

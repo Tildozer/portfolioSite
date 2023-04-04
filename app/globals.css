@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-.hamburger:has(input:checked){
+.hamburger:has(input:checked) {
   padding-left: 1.5rem;
 }
 .hamburger:has(input:checked)::before {
@@ -28,5 +28,5 @@
   width: 300px;
 }
 .nav {
-  position: -webkit-sticky; 
+  position: -webkit-sticky;
 }
