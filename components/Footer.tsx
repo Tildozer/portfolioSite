@@ -21,11 +21,7 @@ const Footer = (props: Props) => {
           <Image height={45} src={Github} alt="Github Profile" />
         </Link>
         <Link className="mt-6 ml-2" href="https://rekanstructed.onrender.com/">
-          <Image
-            width={75}
-            src={Rekanstructed}
-            alt="Github Profile"
-          />
+          <Image width={75} src={Rekanstructed} alt="Github Profile" />
         </Link>
       </section>
     </footer>

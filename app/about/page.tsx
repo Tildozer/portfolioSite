@@ -1,7 +1,6 @@
 import { Accomplishments, Footer, Nav, FunFacts } from "@/components";
 // import './globals.css';
 
-
 export default function About() {
   return (
     <main className="bg-onyx min-h-vhf text-white min-w-[300px]">
@@ -15,9 +14,9 @@ export default function About() {
         <Accomplishments />
       </section>
       <section className="min-h-[30rem] ml-0 mt-20 xs:ml-28">
-       <FunFacts />
+        <FunFacts />
       </section>
-        <Footer />
+      <Footer />
     </main>
   );
 }

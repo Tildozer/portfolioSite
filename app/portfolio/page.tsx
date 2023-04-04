@@ -1,9 +1,7 @@
 import { Footer, Nav, Projects } from "@/components";
 import Link from "next/link";
 
-
 export default function portfolio() {
-
   return (
     <main className="bg-coolGray min-h-vhf min-w-[fit-content] flex flex-col">
       <Nav />
@@ -13,7 +11,7 @@ export default function portfolio() {
       <section className=" flex flex-col xs:items-center text-onyx min-h-[78.7vh]">
         <Projects />
       </section>
-        <Footer />
+      <Footer />
     </main>
   );
 }

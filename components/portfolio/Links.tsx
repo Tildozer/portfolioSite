@@ -1,14 +1,14 @@
-import React from 'react'
-import Link from 'next/link'
+import React from "react";
+import Link from "next/link";
 
 type Props = {
-    link: string
-    name: string
-    githubLink: string
-}
+  link: string;
+  name: string;
+  githubLink: string;
+};
 
 const ProjectLinks = (props: Props) => {
-    const { link, name, githubLink} = props
+  const { link, name, githubLink } = props;
   return (
     <div>
       <Link
@@ -25,7 +25,7 @@ const ProjectLinks = (props: Props) => {
         Github Link
       </Link>
     </div>
-  )
-}
+  );
+};
 
 export default ProjectLinks;

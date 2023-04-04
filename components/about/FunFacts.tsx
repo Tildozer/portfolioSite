@@ -1,14 +1,14 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import {default as funFacts} from "./funFactArray"
+import { default as funFacts } from "./funFactArray";
 type Props = {};
 
 const FunFacts = (props: Props) => {
   const [show1, setShow1] = useState(false);
   const [show2, setShow2] = useState(false);
   const [show3, setShow3] = useState(false);
-  const show = [show1, show2, show3]
-  funFacts
+  const show = [show1, show2, show3];
+  funFacts;
   useEffect(() => {
     setTimeout(() => {
       setShow1(true);
