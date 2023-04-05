@@ -54,17 +54,7 @@ const sendMailHandler = async (client: string, content: MailObj) => {
 
 const getHTMLMessage = (client: string, content: MailObj) => {
   return `
-    <h1>Hi, ${content.name}!</h1>
-    <h1>Thank you for taking the time to look at my portfoli!</h1>
-    <div>
-      <a href="mailto:actninswitch@gmail.com">actninswitch@gmail.com</a>
-    </div>
-    <div>
-      <a href="https://www.linkedin.com/in/anthony-thibodeaux">Linkden profile</a>
-    </div>
-    <div>
-      <a href="https://github.com/Tildozer">github account</a>
-    </div>
+      <h1>Hi, ${content.name}!</h1>
     <div>${content.htmlStr}</div>
     `;
 };

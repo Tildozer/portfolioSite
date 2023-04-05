@@ -6,7 +6,20 @@ export async function emailFetch(email: string, name: string) {
     JSON.stringify({
       email,
       name,
-      htmlStr: `<h1>tester</h1>`,
+      htmlStr: `
+        <h2>I hope your day is going well!</h2>
+        <p>
+          I am a charasmatic and enthusiastic Software Engineer who is ready to show you what I can do for you! for buisness inqueries please reach me at my email
+        </p>
+        <img src="https://media.tenor.com/pUJHssYR_JsAAAAC/welcome.gif" alt="Pikachu waving">
+        <h3>Thank you for taking the time to look at my portfoli!</h3>
+        <div class="links">
+          <a href="mailto:actninswitch@gmail.com">actninswitch@gmail.com</a>
+          &nbsp;||&nbsp;
+          <a href="https://www.linkedin.com/in/anthony-thibodeaux">Linkden profile</a>
+          &nbsp;||&nbsp;
+          <a href="https://github.com/Tildozer">github account</a>
+        </div>`,
     })
   );
 }
