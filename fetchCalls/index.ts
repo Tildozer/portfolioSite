@@ -9,7 +9,7 @@ export async function emailFetch(email: string, name: string) {
       htmlStr: `
         <h2>I hope your day is going well!</h2>
         <p>
-          I am a charasmatic and enthusiastic Software Engineer who is ready to show you what I can do for you! for buisness inqueries please reach me at my email
+          I am a charasmatic and enthusiastic Software Engineer who is ready to show you what I can do for you! I work hard everyday to keep learning new skills and reaching my full potential. for any buisness inquries please reach out to me via email. 
         </p>
         <img src="https://media.tenor.com/pUJHssYR_JsAAAAC/welcome.gif" alt="Pikachu waving">
         <h3>Thank you for taking the time to look at my portfoli!</h3>
