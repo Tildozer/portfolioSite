@@ -1,12 +1,11 @@
 "use client";
 import React, { useState } from "react";
 import { Button } from "..";
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer, toast } from "react-toastify";
 import axios, { AxiosError } from "axios";
 import { emailFetch } from "@/fetchCalls";
 import { GiAchillesHeel } from "react-icons/gi";
 import { MdOutlineSend } from "react-icons/md";
-
 
 interface Props {}
 
@@ -30,8 +29,8 @@ const EmailForm = (props: Props) => {
         draggable: true,
         progress: undefined,
         theme: "dark",
-        icon: MdOutlineSend
-      })
+        icon: MdOutlineSend,
+      });
     } catch (error: AxiosError | unknown) {
       console.log(error);
       if (axios.isAxiosError(error)) {
@@ -45,8 +44,8 @@ const EmailForm = (props: Props) => {
           draggable: true,
           progress: undefined,
           theme: "dark",
-          icon: GiAchillesHeel
-          });
+          icon: GiAchillesHeel,
+        });
       } else {
         console.error(error);
       }
@@ -86,7 +85,6 @@ const EmailForm = (props: Props) => {
           type="text"
         />
         <Button callback={sendEmail} message="Send Email" />
-
       </form>
     </>
   );

@@ -2,8 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@import 'react-toastify/dist/ReactToastify.css';
-
+@import "react-toastify/dist/ReactToastify.css";
 
 .hamburger:has(input:checked) {
   padding-left: 1.5rem;
