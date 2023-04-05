@@ -1,8 +1,12 @@
 "use client";
 import React, { useState } from "react";
 import { Button } from "..";
+import { ToastContainer, toast } from 'react-toastify';
 import axios, { AxiosError } from "axios";
 import { emailFetch } from "@/fetchCalls";
+import { GiAchillesHeel } from "react-icons/gi";
+import { MdOutlineSend } from "react-icons/md";
+
 
 interface Props {}
 
@@ -16,11 +20,33 @@ const EmailForm = (props: Props) => {
     try {
       await emailFetch(email, name);
       setName("");
-      setName("");
+      setEmail("");
+      toast.success("Email sent!", {
+        position: toast.POSITION.TOP_RIGHT,
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+        icon: MdOutlineSend
+      })
     } catch (error: AxiosError | unknown) {
       console.log(error);
       if (axios.isAxiosError(error)) {
-        setError(error.response?.data || "Error");
+        // setError(error.response?.data || "Error");
+        toast.error(error.response?.data || "Error", {
+          position: toast.POSITION.TOP_RIGHT,
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "dark",
+          icon: GiAchillesHeel
+          });
       } else {
         console.error(error);
       }
@@ -32,6 +58,7 @@ const EmailForm = (props: Props) => {
 
   return (
     <>
+      <ToastContainer />
       <div className={error ? "animate-bounce" : ""}>{error}</div>
       <form className="flex flex-col items-center bg-coolGray pb-5 pt-5 mb-5 rounded-md border-2 shadow-lg shadow-onyx border-onyx w-10/12">
         <div className="m-2">
@@ -59,6 +86,7 @@ const EmailForm = (props: Props) => {
           type="text"
         />
         <Button callback={sendEmail} message="Send Email" />
+
       </form>
     </>
   );

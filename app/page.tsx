@@ -1,9 +1,9 @@
 import React from "react";
-import { Volkhov } from "next/font/google";
-import "./globals.css";
-import { EmailForm, Footer, Nav, TypeEffect } from "@/components/";
-import Ladybug from "../public/ladybug.png";
 import Image from "next/image";
+import { Volkhov } from "next/font/google";
+import Ladybug from "../public/ladybug.png";
+import { EmailForm, Footer, Nav, TypeEffect } from "@/components/";
+import "./globals.css";
 
 const volkhov = Volkhov({
   weight: "400",
@@ -24,6 +24,7 @@ const options = {
   autoStart: true,
   loop: true,
 };
+
 export default function Home() {
   return (
     <main
