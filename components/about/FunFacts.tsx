@@ -27,15 +27,15 @@ const FunFacts = (props: Props) => {
         Fun facts:
       </h1>
       <ul className="flex flex-col">
-        {funFacts.map((fact, idx) => {
+        {funFacts.map(({id, details}, idx) => {
           return (
             <li
-              key={idx}
+              key={id}
               className={`m-2 p-2 max-w-[40rem] border-2 rounded-lg border-mountainBatten shadow-md shadow-mountainBatten ${
                 idx % 2 !== 0 ? "xs:self-end xl:mr-48 2xl:self-center " : ""
               }${show[idx] ? "animate-fadeInOnce" : "hidden"}`}
             >
-              {fact.details}
+              {details}
             </li>
           );
         })}

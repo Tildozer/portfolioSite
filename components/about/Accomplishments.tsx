@@ -29,18 +29,18 @@ const Accomplishments = (props: Props) => {
         Accomplishments:
       </h1>
       <ul className="flex flex-col">
-        {accomplishments.map((accomplishment, idx) => {
+        {accomplishments.slice().reverse().map(({id, name, paragraph}, idx) => {
           return (
             <li
-              key={idx}
+              key={id}
               className={`m-2 p-2 max-w-[40rem] border-2 rounded-lg border-mountainBatten shadow-md shadow-mountainBatten ${
                 idx % 2 !== 0 ? "xs:self-end xl:mr-48 2xl:self-center " : ""
               }${show[idx] ? "animate-fadeInOnce" : "hidden"}`}
             >
               <h1 className="bg-mountainBatten w-fit rounded-full pl-2 pr-2 text-onyx">
-                {accomplishment.name}
+                {name}
               </h1>
-              <div className="highlight">{accomplishment.paragraph}</div>
+              <div className="highlight">{paragraph}</div>
             </li>
           );
         })}

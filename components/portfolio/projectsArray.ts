@@ -2,6 +2,7 @@ import reKANstructed from "@/public/image.png";
 import StrangersThings from "@/public/strangersThings.png";
 import { StaticImageData } from "next/image";
 interface Project {
+  id: string
   link: string;
   githubLink: string;
   name: string;
@@ -12,18 +13,7 @@ interface Project {
 //  I Stored my projects in a seprate file to help declutter my component
 const projects: Project[] = [
   {
-    link: "http://rekanstructed.onrender.com/",
-    githubLink: "https://github.com/Team-Kan/Lego-shopper",
-    name: "reKANstructed",
-    about: [
-      "This project was my final project for Fullstack Academy, my two partners and I were tasked with making an Ecommerce website, and we went with a buyback Lego site.",
-      "In the development process, we decided to use Jest to test our back-end routes, and our database calls to ensure they were working, helping assure that our functions were properly working before we got to the front end.",
-      "We used Exalidraw to plan out our front end before coding that way we were all on the same page about what to do. This helped make development smooth thus letting us do some extra stuff at the end such as email confirmation with NodeMailer",
-    ],
-    imgLocation: reKANstructed,
-    projectType: "Group Project",
-  },
-  {
+    id: "1",
     link: "https://strangersproj.netlify.app",
     githubLink: "https://github.com/Tildozer/strangersThngs",
     name: "Strangers Things",
@@ -34,6 +24,19 @@ const projects: Project[] = [
     ],
     imgLocation: StrangersThings,
     projectType: "Solo Project",
+  },
+  {
+    id: "2",
+    link: "http://rekanstructed.onrender.com/",
+    githubLink: "https://github.com/Team-Kan/Lego-shopper",
+    name: "reKANstructed",
+    about: [
+      "This project was my final project for Fullstack Academy, my two partners and I were tasked with making an Ecommerce website, and we went with a buyback Lego site.",
+      "In the development process, we decided to use Jest to test our back-end routes, and our database calls to ensure they were working, helping assure that our functions were properly working before we got to the front end.",
+      "We used Exalidraw to plan out our front end before coding that way we were all on the same page about what to do. This helped make development smooth thus letting us do some extra stuff at the end such as email confirmation with NodeMailer",
+    ],
+    imgLocation: reKANstructed,
+    projectType: "Group Project",
   },
   //  {link: "", name: "Pokedex", about: [""], githubLink: "", imgLocation:  , projectType: "Solo Project" }
 ];

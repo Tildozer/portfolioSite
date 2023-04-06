@@ -10,13 +10,21 @@ const Projects = (props: Props) => {
 
   return (
     <>
-      {projects.map((project, idx) => {
+      {projects.slice().reverse().map(({
+        id, 
+        name, 
+        link, 
+        githubLink, 
+        imgLocation, 
+        projectType, 
+        about
+      }) => {
         return (
-          <div key={idx} className="mb-24">
+          <div key={id} className="mb-24">
             <Links
-              name={project.name}
-              link={project.link}
-              githubLink={project.githubLink}
+              name={name}
+              link={link}
+              githubLink={githubLink}
             />
             <br />
             <ul className="list-disc flex flex-col bg-cadetGray sm:flex-row border-2 border-onyx shadow-md shadow-onyx max-w-[40rem] min-h-[20rem] p-4 pl-6 rounded-md m-4">
@@ -25,13 +33,13 @@ const Projects = (props: Props) => {
                   priority
                   height={200}
                   width={400}
-                  src={project.imgLocation}
-                  alt={`${project.name}'s Logo`}
+                  src={imgLocation}
+                  alt={`${name}'s Logo`}
                 />
-                <div className="text-xl">{project.projectType}</div>
+                <div className="text-xl">{projectType}</div>
               </div>
               <div className="flex flex-col">
-                <Points about={project.about} />
+                <Points about={about} />
               </div>
             </ul>
           </div>
