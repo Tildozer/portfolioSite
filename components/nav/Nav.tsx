@@ -6,6 +6,8 @@ import { Hamburger } from ".";
 type Props = {};
 
 const Nav = (props: Props) => {
+  const linkClassName: string = "mt-4 md:text-2xl hover:underline hover:text-mountainBatten"
+
   return (
     <section className="sticky top-0 z-10 nav">
       <div className="box-border absolute">
@@ -13,22 +15,30 @@ const Nav = (props: Props) => {
         <aside className="sidebar pt-14 pl-1 bg-black text-white min-h-vhf text-opacity-0 transition-[translate] duration-200 w-full bg-no-repeat bg-cover bg-[url('../public/haikeiPeaks.svg')] bg-opacity-0 ">
           <nav className="flex flex-col text-teal-200">
             <Link
-              className="mt-4 md:text-2xl hover:underline hover:text-mountainBatten"
+              className={linkClassName}
               href="/about"
             >
-              about
+              About
             </Link>
             <Link
-              className="mt-4 md:text-2xl hover:underline hover:text-mountainBatten"
+              className={linkClassName}
               href="/portfolio"
             >
-              portfolio
+              Portfolio
             </Link>
             <Link
-              className="mt-4 md:text-2xl hover:underline hover:text-mountainBatten"
+              className={linkClassName}
               href="/"
             >
-              home
+              Home
+            </Link>
+            <Link
+              className={linkClassName}
+              href="/frameworks-and-languages"
+            >
+              Languages &
+              <br />
+              Frameworks
             </Link>
           </nav>
         </aside>
