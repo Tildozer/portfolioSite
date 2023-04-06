@@ -1,11 +1,11 @@
 import React from "react";
 import Image from "next/image";
-import { Volkhov } from "next/font/google";
+import { Roboto } from "next/font/google";
 import Ladybug from "../public/ladybug.png";
 import { EmailForm, Footer, Nav, TypeEffect } from "@/components/";
 import "./globals.css";
 
-const volkhov = Volkhov({
+const roboto = Roboto({
   weight: "400",
   style: "normal",
   subsets: ["latin"],
@@ -28,7 +28,7 @@ const options = {
 export default function Home() {
   return (
     <main
-      className={`${volkhov.className} flex flex-col text-black bg-cadetGray min-h-vhf min-w-[300px]`}
+      className={`${roboto.className} flex flex-col text-black bg-cadetGray min-h-vhf min-w-[300px]`}
     >
       <Nav />
       <header className="">
