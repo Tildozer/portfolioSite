@@ -40,5 +40,11 @@ model about {
 
 model languages {
   id Int @id @default(autoincrement())
-  
+  language String @db.VarChar(50)
+  link String @db.VarChar(200)
+}
+model frameworks {
+  id Int @id @default(autoincrement())
+  framework String @db.VarChar(50)
+  link String @db.VarChar(200)
 }

@@ -1,21 +1,26 @@
 import Link from "next/link";
 import React from "react";
-import knownLanguages from "./knownLanguages";
-interface Props {}
+import { languages } from "@prisma/client";
+// import knownLanguages from "./knownLanguages";
+interface Props {
+  languages: languages[]
+}
 
-const mapLanguages = knownLanguages.map(({ id, language, Picture }) => {
-  return (
-    <div key={id} className="flex">
-      <Link href="">
-        <h2>{language}</h2>
-        <div>{<Picture className=" text-red-600" />}</div>
-      </Link>
-    </div>
-  );
-});
 
 const Languages = (props: Props) => {
-  knownLanguages;
+  const {languages} = props;
+
+  const mapLanguages = languages.map(({ id, language }) => {
+    return (
+      <div key={id} className="flex">
+        <Link href="">
+          <h2>{language}</h2>
+          {/* <div>{<Picture className=" text-red-600" />}</div> */}
+        </Link>
+      </div>
+    );
+  });
+  
   return <div className="flex">{mapLanguages}</div>;
 };
 

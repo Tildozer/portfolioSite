@@ -2,6 +2,8 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
+npm i
+
 First, run the development server:
 
 ```bash
@@ -12,7 +14,8 @@ yarn dev
 pnpm dev
 ```
 
-node --loader ts-node/esm script.ts   
+npx prisma migrate dev --name build
+node --loader ts-node/esm script.ts 
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 

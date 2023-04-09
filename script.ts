@@ -1,47 +1,13 @@
-const { PrismaClient } = require("@prisma/client");
-const prisma = new PrismaClient();
-
-const dropAndCreateTables = async () => {
-  await prisma.$queryRaw`DROP TABLE IF EXISTS "funFacts"`;
-  await prisma.$queryRaw`DROP TABLE IF EXISTS about`;
+const { PrismaClient } = require('@prisma/client')
+const prisma = new PrismaClient()
+// dropTable is only for a hard reset, but is here just incase
+const dropTables = async () => {
   await prisma.$queryRaw`DROP TABLE IF EXISTS accomplishments`;
+  await prisma.$queryRaw`DROP TABLE IF EXISTS "funFacts"`;
   await prisma.$queryRaw`DROP TABLE IF EXISTS projects`;
-
-  await prisma.$queryRaw`CREATE TABLE "funFacts" (
-    "id" SERIAL NOT NULL,
-    "details" TEXT,
-
-    CONSTRAINT "funFacts_pkey" PRIMARY KEY ("id")
-  );`;
-
-  await prisma.$queryRaw`CREATE TABLE about (
-    "id" SERIAL NOT NULL,
-    "projectsId" INTEGER NOT NULL,
-    "info" VARCHAR(255) NOT NULL,
-
-    CONSTRAINT "about_pkey" PRIMARY KEY ("id")
-  );`;
-
-  await prisma.$queryRaw`CREATE TABLE accomplishments(
-    "id" SERIAL NOT NULL,
-    "name" VARCHAR(255) NOT NULL,
-    "content" TEXT,
-    
-    CONSTRAINT "accomplishments_pkey" PRIMARY KEY ("id")
-  );`;
-
-  await prisma.$queryRaw`CREATE TABLE "projects" (
-    "id" SERIAL NOT NULL,
-    "link" VARCHAR(255) NOT NULL,
-    "githubLink" VARCHAR(255) NOT NULL,
-    "name" VARCHAR(100) NOT NULL,
-    "imgUrl" VARCHAR(255) NOT NULL,
-    "projectType" VARCHAR(50) NOT NULL,
-
-    CONSTRAINT "projects_pkey" PRIMARY KEY ("id")
-  );`;
-
-  await prisma.$queryRaw`ALTER TABLE "about" ADD CONSTRAINT "about_projectsId_fkey" FOREIGN KEY ("projectsId") REFERENCES "projects"("id") ON DELETE RESTRICT ON UPDATE CASCADE;`;
+  await prisma.$queryRaw`DROP TABLE IF EXISTS about`;
+  await prisma.$queryRaw`DROP TABLE IF EXISTS languages`;
+  await prisma.$queryRaw`DROP TABLE IF EXISTS framesworks`;
 };
 
 const syncFacts = async () => {
@@ -143,11 +109,62 @@ const syncProjects = async () => {
   console.log(aboutProjects);
 };
 
+const syncLanguages = async () => {
+  const languages = await prisma.languages.createMany({
+    data: [
+      {
+        language: "JavaScript",
+        link: "https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+      },
+      {
+        language: "TypeScript",
+        link: "https://www.typescriptlang.org/"
+      },
+      {
+        language: "Postgresql",
+        link: "https://www.postgresql.org/"
+      },
+      {
+        language: "HTML",
+        link: "https://developer.mozilla.org/en-US/docs/Web/HTML"
+      },
+      {
+        language: "CSS",
+        link: "https://developer.mozilla.org/en-US/docs/Web/CSS"
+      },
+    ]
+  })
+  console.log("----Languages----")
+  console.log(languages)
+}
+
+const syncFrameworks = async () => {
+  const frameworks = await prisma.frameworks.createMany({
+    data: [
+      {
+        framework: "React.js",
+        link: "https://react.dev/"
+      },
+      {
+        framework: "Next.js", 
+        link: "https://nextjs.org/"
+      },
+      {
+        framework: "Prisma", 
+        link: "https://www.prisma.io/"
+      },
+    ]
+  })
+  console.log("----frameworks----")
+  console.log(frameworks)
+}
+
 const syncAndSeed = async () => {
-  await dropAndCreateTables();
   await syncFacts();
   await syncAccomplisments();
   await syncProjects();
+  await syncLanguages();
+  await syncFrameworks()
 };
 
 syncAndSeed();

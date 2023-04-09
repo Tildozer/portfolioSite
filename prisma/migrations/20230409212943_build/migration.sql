@@ -36,5 +36,23 @@ CREATE TABLE "about" (
     CONSTRAINT "about_pkey" PRIMARY KEY ("id")
 );
 
+-- CreateTable
+CREATE TABLE "languages" (
+    "id" SERIAL NOT NULL,
+    "language" VARCHAR(50) NOT NULL,
+    "link" VARCHAR(200) NOT NULL,
+
+    CONSTRAINT "languages_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateTable
+CREATE TABLE "frameworks" (
+    "id" SERIAL NOT NULL,
+    "framework" VARCHAR(50) NOT NULL,
+    "link" VARCHAR(200) NOT NULL,
+
+    CONSTRAINT "frameworks_pkey" PRIMARY KEY ("id")
+);
+
 -- AddForeignKey
 ALTER TABLE "about" ADD CONSTRAINT "about_projectsId_fkey" FOREIGN KEY ("projectsId") REFERENCES "projects"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
