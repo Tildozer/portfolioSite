@@ -4,5 +4,7 @@ export { FunFacts } from "./about";
 export { Projects } from "./portfolio";
 export { EmailForm } from "./mainPage";
 export { TypeEffect } from "./mainPage";
+export { Languages } from "./languages-and-framesworks";
+export { Frameworks } from "./languages-and-framesworks";
 export { Accomplishments } from "./about";
 export { default as Footer } from "./Footer";
