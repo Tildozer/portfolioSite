@@ -1,15 +1,9 @@
-import React from 'react'
+import React from "react";
 
-interface Props {
-    
-}
+interface Props {}
 
 const Frameworks = (props: Props) => {
-    return (
-        <div className='text-white'>
-            Frame
-        </div>
-    )
-}
+  return <div className="text-white">Frame</div>;
+};
 
-export default Frameworks
+export default Frameworks;

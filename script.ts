@@ -28,7 +28,7 @@ const dropAndCreateTables = async () => {
     "content" TEXT,
     
     CONSTRAINT "accomplishments_pkey" PRIMARY KEY ("id")
-  );`
+  );`;
 
   await prisma.$queryRaw`CREATE TABLE "projects" (
     "id" SERIAL NOT NULL,
@@ -39,9 +39,9 @@ const dropAndCreateTables = async () => {
     "projectType" VARCHAR(50) NOT NULL,
 
     CONSTRAINT "projects_pkey" PRIMARY KEY ("id")
-  );`
+  );`;
 
-  await prisma.$queryRaw`ALTER TABLE "about" ADD CONSTRAINT "about_projectsId_fkey" FOREIGN KEY ("projectsId") REFERENCES "projects"("id") ON DELETE RESTRICT ON UPDATE CASCADE;`
+  await prisma.$queryRaw`ALTER TABLE "about" ADD CONSTRAINT "about_projectsId_fkey" FOREIGN KEY ("projectsId") REFERENCES "projects"("id") ON DELETE RESTRICT ON UPDATE CASCADE;`;
 };
 
 const syncFacts = async () => {

@@ -7,14 +7,11 @@ const roboto = Roboto({
   subsets: ["latin"],
 });
 
-
 export default function About() {
   return (
     <main className={`${roboto.className} bg-onyx text-white min-w-[300px]`}>
       <Nav />
-      <section
-        className="min-h-vhf flex flex-col justify-center xs:items-center p-4 xs:p-0"
-      >
+      <section className="min-h-vhf flex flex-col justify-center xs:items-center p-4 xs:p-0">
         <h1>Languages</h1>
         <Languages />
         <h1>Frameworks</h1>

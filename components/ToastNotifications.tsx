@@ -1,7 +1,7 @@
-import React from 'react'
-import { ToastContainer, toast } from 'react-toastify';
+import React from "react";
+import { ToastContainer, toast } from "react-toastify";
 
-type Props = {}
+type Props = {};
 
 const ToastNotifications = (props: Props) => {
   return (
@@ -17,7 +17,7 @@ const ToastNotifications = (props: Props) => {
       pauseOnHover
       theme="dark"
     />
-  )
-}
+  );
+};
 
-export default ToastNotifications
+export default ToastNotifications;

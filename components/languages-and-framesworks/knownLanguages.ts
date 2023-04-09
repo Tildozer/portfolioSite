@@ -1,20 +1,17 @@
-import { IconType } from "react-icons"
-import { SiTypescript, SiJavascript } from "react-icons/si"
+import { IconType } from "react-icons";
+import { SiTypescript, SiJavascript } from "react-icons/si";
 
-
-
-interface languages{
-    id:string
-    language: string
-    Picture: IconType
+interface languages {
+  id: string;
+  language: string;
+  Picture: IconType;
 }
 
-interface framesworks{
-    id: string
-    framework: string
-    picture: IconType
+interface framesworks {
+  id: string;
+  framework: string;
+  picture: IconType;
 }
-
 
 const knownLanguages: languages[] = [
   {
@@ -25,9 +22,8 @@ const knownLanguages: languages[] = [
   {
     id: "2",
     language: "TypeScript",
-    Picture: SiTypescript
+    Picture: SiTypescript,
   },
-]
+];
 
-
-export default knownLanguages
+export default knownLanguages;
