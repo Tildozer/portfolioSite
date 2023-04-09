@@ -24,11 +24,11 @@ const Nav = (props: Props) => {
             <Link className={linkClassName} href="/">
               Home
             </Link>
-            <Link className={linkClassName} href="/frameworks-and-languages">
+            {/* <Link className={linkClassName} href="/frameworks-and-languages">
               Languages &
               <br />
               Frameworks
-            </Link>
+            </Link> */}
           </nav>
         </aside>
       </div>
