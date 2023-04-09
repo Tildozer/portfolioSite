@@ -25,7 +25,9 @@ const options = {
   loop: true,
 };
 
+
 export default function Home() {
+  
   return (
     <main
       className={`${roboto.className} flex flex-col text-black bg-cadetGray min-h-vhf min-w-[300px]`}

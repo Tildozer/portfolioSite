@@ -1,6 +1,5 @@
 import { type NextRequest } from "next/server";
 import sendMail from "./mail";
-import { NextApiResponse } from "next";
 
 interface MailObj {
   email: string;
@@ -8,7 +7,7 @@ interface MailObj {
   htmlStr: string;
 }
 
-export async function POST(request: NextRequest, response: NextApiResponse) {
+export async function POST(request: NextRequest) {
   try {
     const content: MailObj = await request.json();
     const regex: RegExp = new RegExp(

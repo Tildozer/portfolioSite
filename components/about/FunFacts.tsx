@@ -1,14 +1,21 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { default as funFacts } from "./funFactArray";
-type Props = {};
-
+import { funFacts } from "@prisma/client";
+type Props = {
+  facts: funFacts[]
+};
 const FunFacts = (props: Props) => {
+  const {facts} = props
+  const [showfacts, setShowFacts] = useState<funFacts[]>([])
   const [show1, setShow1] = useState(false);
   const [show2, setShow2] = useState(false);
   const [show3, setShow3] = useState(false);
   const show = [show1, show2, show3];
-  funFacts;
+  useEffect(() => {
+    facts 
+    ? setShowFacts(facts)
+    : null
+  }, [facts])
   useEffect(() => {
     setTimeout(() => {
       setShow1(true);
@@ -27,7 +34,7 @@ const FunFacts = (props: Props) => {
         Fun facts:
       </h1>
       <ul className="flex flex-col">
-        {funFacts.map(({id, details}, idx) => {
+        {showfacts.map(({id, details}, idx) => {
           return (
             <li
               key={id}
