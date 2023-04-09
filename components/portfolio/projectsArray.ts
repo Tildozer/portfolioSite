@@ -22,6 +22,7 @@ const projects: Project[] = [
       "I learned how to make components, how to trade in credentials for a token, and how to validate the token for actions on the site.",
       "Successfully incorporated react-router-DOM to navigate visitors between 'pages' on this single-page application",
     ],
+    // https://i.imgur.com/6w1RdZa.png
     imgLocation: StrangersThings,
     projectType: "Solo Project",
   },
