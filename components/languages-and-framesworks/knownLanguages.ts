@@ -6,7 +6,7 @@ import { SiTypescript, SiJavascript } from "react-icons/si"
 interface languages{
     id:string
     language: string
-    picture: IconType
+    Picture: IconType
 }
 
 interface framesworks{
@@ -16,16 +16,18 @@ interface framesworks{
 }
 
 
-
 const knownLanguages: languages[] = [
   {
     id: "1",
     language: "JavaScript",
-    picture: SiJavascript,
+    Picture: SiJavascript,
   },
   {
     id: "2",
     language: "TypeScript",
-    picture: SiTypescript
-  }
+    Picture: SiTypescript
+  },
 ]
+
+
+export default knownLanguages
