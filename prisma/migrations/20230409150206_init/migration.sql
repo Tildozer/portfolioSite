@@ -1,4 +1,21 @@
 -- CreateTable
+CREATE TABLE "accomplishments" (
+    "id" SERIAL NOT NULL,
+    "name" VARCHAR(255) NOT NULL,
+    "content" TEXT,
+
+    CONSTRAINT "accomplishments_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateTable
+CREATE TABLE "funFacts" (
+    "id" SERIAL NOT NULL,
+    "details" TEXT,
+
+    CONSTRAINT "funFacts_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateTable
 CREATE TABLE "projects" (
     "id" SERIAL NOT NULL,
     "link" VARCHAR(255) NOT NULL,
@@ -13,7 +30,6 @@ CREATE TABLE "projects" (
 -- CreateTable
 CREATE TABLE "about" (
     "id" SERIAL NOT NULL,
-    "projectId" INTEGER NOT NULL,
     "projectsId" INTEGER NOT NULL,
     "info" VARCHAR(255) NOT NULL,
 

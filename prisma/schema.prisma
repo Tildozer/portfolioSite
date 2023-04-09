@@ -37,3 +37,8 @@ model about {
   projectsId Int
   info       String   @db.VarChar(255)
 }
+
+model languages {
+  id Int @id @default(autoincrement())
+  
+}
