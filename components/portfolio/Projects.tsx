@@ -2,7 +2,21 @@ import React from "react";
 
 import Image from "next/image";
 import { Points, Links } from ".";
-import { projects } from "@prisma/client";
+type projects = {
+  id: number;
+  link: string;
+  githubLink: string;
+  name: string;
+  imgUrl: string;
+  projectType: string;
+  about: about[]
+}
+
+type about = {
+  id: number;
+  projectsId: number;
+  info: string;
+}
 
 type Props = {
   projects: projects[]

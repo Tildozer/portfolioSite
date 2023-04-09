@@ -1,8 +1,22 @@
 import { Footer, Nav, Projects } from "@/components";
 import { Roboto } from "next/font/google";
-import { PrismaClient, projects, about } from "@prisma/client";
+import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient();
+type projects = {
+  id: number;
+  link: string;
+  githubLink: string;
+  name: string;
+  imgUrl: string;
+  projectType: string;
+  about: about[]
+}
 
+type about = {
+  id: number;
+  projectsId: number;
+  info: string;
+}
 const roboto = Roboto({
   weight: "400",
   style: "normal",
