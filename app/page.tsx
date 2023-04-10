@@ -40,7 +40,7 @@ export default function Home() {
         </div>
       </header>
       <section className="mt-4 mb-4">
-        <h2 className="flex justify-center items-center bg-onyx text-white text-lg md:text-2xl h-24">
+        <h2 className="flex text-sm justify-center items-center bg-onyx text-white md:text-2xl h-24">
           <span>I am</span>
           &nbsp;
           <TypeEffect
@@ -57,7 +57,7 @@ export default function Home() {
         <div className="flex justify-center border-4 border-b-0 rounded-t-lg border-onyx max-w-[800px]">
           <Image
             src={Ladybug}
-            alt="A tree that is growing out of a foregin planent"
+            alt="A ladybug on top of a flower"
             width={800}
             height={1000}
           />
