@@ -1,13 +1,13 @@
 const { PrismaClient } = require('@prisma/client')
 const prisma = new PrismaClient()
 // dropTable is only for a hard reset, but is here just incase
-const dropTables = async () => {
-  await prisma.$queryRaw`DROP TABLE IF EXISTS accomplishments`;
-  await prisma.$queryRaw`DROP TABLE IF EXISTS "funFacts"`;
-  await prisma.$queryRaw`DROP TABLE IF EXISTS projects`;
-  await prisma.$queryRaw`DROP TABLE IF EXISTS about`;
-  await prisma.$queryRaw`DROP TABLE IF EXISTS languages`;
-  await prisma.$queryRaw`DROP TABLE IF EXISTS framesworks`;
+const deleteTables = async () => {
+  await prisma.funFacts.deleteMany({})
+  await prisma.about.deleteMany({})
+  await prisma.projects.deleteMany({})
+  await prisma.languages.deleteMany({})
+  await prisma.frameworks.deleteMany({})
+  await prisma.accomplishments.deleteMany({})
 };
 
 const syncFacts = async () => {
@@ -21,7 +21,7 @@ const syncFacts = async () => {
     prisma.funFacts.create({
       data: {
         details:
-          "I find coding to be one of my biggest passions. ever since I started learning it is all I can focus on! I find perfecting my skills and learning new languges and frameworks, to be fun and the challenge I was looking for.",
+          "I find coding to be one of my biggest passions. Ever since I started learning it is all I can focus on! I find perfecting my skills and learning new languages and frameworks to be fun and the challenge I was looking for.",
       },
     }),
     prisma.funFacts.create({
@@ -159,7 +159,8 @@ const syncFrameworks = async () => {
   console.log(frameworks)
 }
 
-const syncAndSeed = async () => {
+ const syncAndSeed = async () => {
+  await deleteTables();
   await syncFacts();
   await syncAccomplisments();
   await syncProjects();
