@@ -2,7 +2,9 @@ import React from "react";
 import Image from "next/image";
 import { Roboto } from "next/font/google";
 import Ladybug from "../public/ladybug.png";
-import { EmailForm, Footer, Nav, TypeEffect } from "@/components/";
+import { EmailForm, Footer, Nav, TypeEffect, LanguagesAndFrameworks} from "@/components/";
+import { PrismaClient, frameworks, languages } from "@prisma/client";
+const prisma = new PrismaClient();
 import "./globals.css";
 
 const roboto = Roboto({
@@ -25,7 +27,20 @@ const options = {
   loop: true,
 };
 
-export default function Home() {
+
+async function getData(){
+  const frameworks: frameworks[] = await prisma.frameworks.findMany({});
+
+  const languages: languages[] = await prisma.languages.findMany({});
+
+  return {
+    frameworks,
+    languages
+  }
+}
+
+export default async function Home() {
+  const {languages, frameworks} = await getData();
   return (
     <main
       className={`${roboto.className} flex flex-col text-black bg-cadetGray min-h-vhf min-w-[300px]`}
@@ -50,10 +65,11 @@ export default function Home() {
           />
         </h2>
       </section>
-      <section className="flex flex-col text-onyx justify-center items-center ">
+      <section className="flex flex-col text-onyx justify-center items-center  ">
         <EmailForm />
       </section>
-      <section className=" self-center">
+      <LanguagesAndFrameworks frameworks={frameworks} languages={languages}/>
+      <section className="self-center">
         <div className="flex justify-center border-4 border-b-0 rounded-t-lg border-onyx max-w-[800px]">
           <Image
             src={Ladybug}
