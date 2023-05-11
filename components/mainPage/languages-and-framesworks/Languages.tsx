@@ -8,6 +8,7 @@ import {
   SiCss3, 
   SiPostgresql, 
   SiDeno,
+  SiDart
 } from "react-icons/si"
 // import knownLanguages from "./knownLanguages";
 interface Props {
@@ -27,6 +28,8 @@ const pictureSwitch = (language: string) => {
       return <SiCss3 className={`${style} text-blue-600`}/>
     case "Postgresql":
       return <SiPostgresql className={`${style} text-blue-400`}/>
+    case "Dart":
+      return <SiDart className={`${style} text-blue-500`}/>
     default:
       <SiDeno className={`${style} `}/>
   }

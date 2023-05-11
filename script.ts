@@ -1,3 +1,4 @@
+// THIS IS JUST A BACK UP SCRIPT TO RELAUNCH MY DATABASE.
 const { PrismaClient } = require('@prisma/client')
 const prisma = new PrismaClient()
 // dropTable is only for a hard reset, but is here just incase
