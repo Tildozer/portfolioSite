@@ -1,6 +1,6 @@
 import React, { ReactNode } from "react";
 import { frameworks } from "@prisma/client";
-import { RiReactjsLine } from "react-icons/ri";
+import { RiReactjsLine, RiFlutterFill } from "react-icons/ri";
 import { TbBrandNextjs, TbBrandPrisma } from "react-icons/tb";
 import Link from "next/link";
 
@@ -17,6 +17,8 @@ const renderPictures = (framework:string) => {
       return <TbBrandNextjs className={`${iconClassName} text-white`}/>
     case "Prisma":
       return <TbBrandPrisma className={`${iconClassName} text-white`}/>
+    case "Flutter":
+      return <RiFlutterFill className={`${iconClassName} text-blue-400`}/>
     default:
       break;
   }
@@ -45,8 +47,7 @@ const Frameworks = (props: Props) => {
   const {frameworks} = props
 
   return (
-    <div className="text-white flex flex-wrap justif
-    y-center">
+    <div className="text-white flex flex-wrap justify-center">
       {
         renderFrameworks(frameworks)
       }
