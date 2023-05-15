@@ -17,9 +17,9 @@ const Accomplishments = (props: Props) => {
       setShow1(true);
       setTimeout(() => {
         setShow2(true);
-        // setTimeout(() => {
-        //   setShow3(true);
-        // }, 1000);
+        setTimeout(() => {
+          setShow3(true);
+        }, 1000);
       }, 1000);
     }, 600);
   }, []);

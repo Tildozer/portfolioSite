@@ -20,7 +20,7 @@ const FunFacts = (props: Props) => {
           setShow3(true);
         }, 1000);
       }, 1000);
-    }, 2400);
+    }, 3000);
   }, []);
 
   const factRender = facts.map(({ id, details }, idx) => {
