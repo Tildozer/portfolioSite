@@ -1,18 +1,25 @@
 // THIS IS JUST A BACK UP SCRIPT TO RELAUNCH MY DATABASE.
-const { PrismaClient } = require('@prisma/client')
-const prisma = new PrismaClient()
+const { PrismaClient } = require("@prisma/client");
+const prisma = new PrismaClient();
+import {
+  languages,
+  about,
+  funFacts,
+  projects,
+  frameworks,
+} from "@prisma/client";
 // dropTable is only for a hard reset, but is here just incase
 const deleteTables = async () => {
-  await prisma.funFacts.deleteMany({})
-  await prisma.about.deleteMany({})
-  await prisma.projects.deleteMany({})
-  await prisma.languages.deleteMany({})
-  await prisma.frameworks.deleteMany({})
-  await prisma.accomplishments.deleteMany({})
+  await prisma.funFacts.deleteMany({});
+  await prisma.about.deleteMany({});
+  await prisma.projects.deleteMany({});
+  await prisma.languages.deleteMany({});
+  await prisma.frameworks.deleteMany({});
+  await prisma.accomplishments.deleteMany({});
 };
 
 const syncFacts = async () => {
-  const facts = await Promise.all([
+  const facts: funFacts[] = await Promise.all([
     prisma.funFacts.create({
       data: {
         details:
@@ -52,13 +59,20 @@ const syncAccomplisments = async () => {
           "I Completed their Web Development bootcamp, giving me the expertise to build Fullstack applications with the PERN stack. Collaberated on multiple projects with other students and learned valuabale lessons with each other.",
       },
     }),
+    prisma.accomplishments.create({
+      data: {
+        name: "AlgoExpert.io",
+        content:
+          "I Completed 100 interview questions, covering topics such as Recursion, Binary Search Trees, Linked List, Suffix Tries, and famous Algorithms.",
+      },
+    }),
   ]);
   console.log("----Accomplisments----");
   console.log(accomplisments);
 };
 
 const syncProjects = async () => {
-  const project1 = await prisma.projects.create({
+  const project1: projects = await prisma.projects.create({
     data: {
       link: "http://rekanstructed.onrender.com/",
       githubLink: "https://github.com/Team-Kan/Lego-shopper",
@@ -67,7 +81,7 @@ const syncProjects = async () => {
       imgUrl: "https://i.imgur.com/R0Obbyl.png",
     },
   });
-  const project2 = await prisma.projects.create({
+  const project2: projects = await prisma.projects.create({
     data: {
       link: "https://strangersproj.netlify.app",
       githubLink: "https://github.com/Tildozer/strangersThngs",
@@ -76,7 +90,7 @@ const syncProjects = async () => {
       imgUrl: "https://i.imgur.com/6w1RdZa.png",
     },
   });
-  const aboutProjects = await prisma.about.createMany({
+  const aboutProjects: about[] = await prisma.about.createMany({
     data: [
       {
         info: "This was my first introduction to React and JSON web tokens.",
@@ -111,62 +125,70 @@ const syncProjects = async () => {
 };
 
 const syncLanguages = async () => {
-  const languages = await prisma.languages.createMany({
+  const languages: languages[] = await prisma.languages.createMany({
     data: [
       {
         language: "JavaScript",
-        link: "https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+        link: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
       },
       {
         language: "TypeScript",
-        link: "https://www.typescriptlang.org/"
+        link: "https://www.typescriptlang.org/",
       },
       {
         language: "Postgresql",
-        link: "https://www.postgresql.org/"
+        link: "https://www.postgresql.org/",
       },
       {
-        language: "HTML",
-        link: "https://developer.mozilla.org/en-US/docs/Web/HTML"
+        langauge: "Dart",
+        link: "https://dart.dev/",
       },
       {
         language: "CSS",
-        link: "https://developer.mozilla.org/en-US/docs/Web/CSS"
+        link: "https://developer.mozilla.org/en-US/docs/Web/CSS",
       },
-    ]
-  })
-  console.log("----Languages----")
-  console.log(languages)
-}
+      {
+        language: "HTML",
+        link: "https://developer.mozilla.org/en-US/docs/Web/HTML",
+      },
+    ],
+  });
+  console.log("----Languages----");
+  console.log(languages);
+};
 
 const syncFrameworks = async () => {
-  const frameworks = await prisma.frameworks.createMany({
+  const frameworks: frameworks[] = await prisma.frameworks.createMany({
     data: [
       {
         framework: "React.js",
-        link: "https://react.dev/"
+        link: "https://react.dev/",
       },
       {
-        framework: "Next.js", 
-        link: "https://nextjs.org/"
+        framework: "Next.js",
+        link: "https://nextjs.org/",
       },
       {
-        framework: "Prisma", 
-        link: "https://www.prisma.io/"
+        framework: "Prisma",
+        link: "https://www.prisma.io/",
       },
-    ]
-  })
-  console.log("----frameworks----")
-  console.log(frameworks)
-}
+      {
+        framework: "Flutter",
+        link: "https://docs.flutter.dev/",
+      },
+    ],
+  });
+  console.log("----frameworks----");
+  console.log(frameworks);
+};
 
- const syncAndSeed = async () => {
+const syncAndSeed = async () => {
   await deleteTables();
   await syncFacts();
   await syncAccomplisments();
   await syncProjects();
   await syncLanguages();
-  await syncFrameworks()
+  await syncFrameworks();
 };
 
 syncAndSeed();
