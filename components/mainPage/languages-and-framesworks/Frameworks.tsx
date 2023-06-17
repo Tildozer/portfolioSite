@@ -1,7 +1,7 @@
 import React, { ReactNode } from "react";
 import { frameworks } from "@prisma/client";
 import { RiReactjsLine, RiFlutterFill } from "react-icons/ri";
-import { TbBrandNextjs, TbBrandPrisma } from "react-icons/tb";
+import { TbBrandNextjs, TbBrandPrisma, TbBrandThreejs } from "react-icons/tb";
 import Link from "next/link";
 
 interface Props {
@@ -19,6 +19,8 @@ const renderPictures = (framework: string) => {
       return <TbBrandPrisma className={`${iconClassName} text-white`} />;
     case "Flutter":
       return <RiFlutterFill className={`${iconClassName} text-blue-400`} />;
+    case "Three.js":
+      return <TbBrandThreejs className={`${iconClassName} text-blue-400`} />;
     default:
       break;
   }
