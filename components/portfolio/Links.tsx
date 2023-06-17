@@ -14,6 +14,7 @@ const ProjectLinks = (props: Props) => {
       <Link
         className="cursor-pointer w-24 underline underline-offset-2 hover:text-black ml-2 text-2xl"
         href={link}
+        target="_blank"
       >
         {name}
       </Link>
@@ -21,6 +22,7 @@ const ProjectLinks = (props: Props) => {
       <Link
         className="cursor-pointer w-24 underline underline-offset-2 hover:text-black ml-2 text-2xl"
         href={githubLink}
+        target="_blank"
       >
         Github Link
       </Link>

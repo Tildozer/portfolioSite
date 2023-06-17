@@ -9,14 +9,14 @@ type projects = {
   name: string;
   imgUrl: string;
   projectType: string;
-  about: about[]
-}
+  about: about[];
+};
 
 type about = {
   id: number;
   projectsId: number;
   info: string;
-}
+};
 const roboto = Roboto({
   weight: "400",
   style: "normal",
@@ -24,14 +24,16 @@ const roboto = Roboto({
 });
 
 async function getData() {
-  'use server'
-   const projects: projects[] = await prisma.projects.findMany({include: {about: true}});
+  "use server";
+  const projects: projects[] = await prisma.projects.findMany({
+    include: { about: true },
+  });
 
-   return projects
+  return projects;
 }
 
 export default async function portfolio() {
-  const projects = await getData()
+  const projects = await getData();
   return (
     <main
       className={`${roboto.className} bg-coolGray min-h-vhf min-w-[fit-content] flex flex-col`}
@@ -41,7 +43,7 @@ export default async function portfolio() {
         Portfolio
       </header>
       <section className=" flex flex-col xs:items-center text-onyx min-h-[78.7vh]">
-        <Projects projects={projects}/>
+        <Projects projects={projects} />
       </section>
       <Footer />
     </main>

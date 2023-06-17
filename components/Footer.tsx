@@ -14,13 +14,18 @@ const Footer = (props: Props) => {
         <Link
           href="https://www.linkedin.com/in/anthony-thibodeaux/"
           className="mt-1"
+          target="_blank"
         >
           <Image priority height={45} src={Linkedin} alt="LinkedIn Profile" />
         </Link>
-        <Link href="https://github.com/Tildozer">
+        <Link href="https://github.com/Tildozer" target="_blank">
           <Image height={45} src={Github} alt="Github Profile" />
         </Link>
-        <Link className="mt-6 ml-2" href="https://rekanstructed.onrender.com/">
+        <Link
+          className="mt-6 ml-2"
+          href="https://rekanstructed.onrender.com/"
+          target="_blank"
+        >
           <Image width={75} src={Rekanstructed} alt="Github Profile" />
         </Link>
       </section>
