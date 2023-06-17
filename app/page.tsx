@@ -29,6 +29,7 @@ const options = {
 
 
 async function getData(){
+  'use server'
   const frameworks: frameworks[] = await prisma.frameworks.findMany({});
 
   const languages: languages[] = await prisma.languages.findMany({});

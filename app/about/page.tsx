@@ -10,6 +10,7 @@ const roboto = Roboto({
 });
 
 async function getData() {
+  'use server'
   const facts: funFacts[] = await prisma.funFacts.findMany({});
   const accomplishments: accomplishments[] = await prisma.accomplishments.findMany({});
   return {

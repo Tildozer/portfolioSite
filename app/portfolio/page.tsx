@@ -24,6 +24,7 @@ const roboto = Roboto({
 });
 
 async function getData() {
+  'use server'
    const projects: projects[] = await prisma.projects.findMany({include: {about: true}});
 
    return projects
